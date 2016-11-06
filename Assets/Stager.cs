@@ -25,6 +25,7 @@ public class Stager : MonoBehaviour {
                 Vector3 ray = new Vector3(x / max, 0, z / max);
                 GameObject monster = GameObject.Instantiate(berd);
                 monster.transform.position = Camera.main.transform.position + 2f * ray;
+                GameObject.Destroy(monster, 15);
             }
         }
         else if (stage == 1)
