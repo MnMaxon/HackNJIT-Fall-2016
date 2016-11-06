@@ -73,23 +73,20 @@ public class Stager : MonoBehaviour {
             {
                 stage++;
                 float val = 20, y = 10;
-                GameObject c1 = GameObject.Instantiate(cubert);
-                GameObject c2 = GameObject.Instantiate(cubert);
-                GameObject c3 = GameObject.Instantiate(cubert);
-                GameObject c4 = GameObject.Instantiate(cubert);
-                c1.transform.position = new Vector3(val, y, -val);
-                c2.transform.position = new Vector3(val, y, val); ;
-                c3.transform.position = new Vector3(-val, y, val); ;
-                c4.transform.position = new Vector3(-val, y, -val);
-                GameObject c5 = GameObject.Instantiate(cubert);
-                GameObject c6 = GameObject.Instantiate(cubert);
-                GameObject c7 = GameObject.Instantiate(cubert);
-                GameObject c8 = GameObject.Instantiate(cubert);
-                c1.transform.position = new Vector3(val, y + 1, -val);
-                c2.transform.position = new Vector3(val, y + 1, val); ;
-                c3.transform.position = new Vector3(-val, y + 1, val); ;
-                c4.transform.position = new Vector3(-val, y + 1, -val);
+                SpawnCuberts(val, y);
+                SpawnCuberts(val, y + 1);
             }
         }
+    }
+
+    public void SpawnCuberts(float val, float y) {
+        GameObject c1 = GameObject.Instantiate(cubert);
+        GameObject c2 = GameObject.Instantiate(cubert);
+        GameObject c3 = GameObject.Instantiate(cubert);
+        GameObject c4 = GameObject.Instantiate(cubert);
+        c1.transform.position = new Vector3(val, y, -val);
+        c2.transform.position = new Vector3(val, y, val); ;
+        c3.transform.position = new Vector3(-val, y, val); ;
+        c4.transform.position = new Vector3(-val, y, -val);
     }
 }
